@@ -66,6 +66,7 @@ async def state():
     return {"state": env.state().model_dump()}
 
 
+@app.get("/")
 @app.get("/health")
 async def health():
     return {"status": "ok", "service": "bug_triage_benchmark"}
