@@ -5,6 +5,7 @@ description = "Real-world bug triage environment for AI agents"
 requires-python = ">=3.10"
 
 dependencies = [
+    "openenv-core>=0.2.0",
     "pydantic>=2.0",
     "openai>=1.0",
     "fastapi>=0.110.0",
@@ -12,5 +13,8 @@ dependencies = [
     "pyyaml>=6.0",
 ]
 
+[project.scripts]
+bugtriage-server = "server.app:main"
+
 [tool.setuptools.packages.find]
-include = ["envs*"]
+include = ["envs*", "server*"]
