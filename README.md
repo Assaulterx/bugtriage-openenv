@@ -1,3 +1,12 @@
+---
+title: BugTriage OpenEnv
+emoji: 🐛
+colorFrom: purple
+colorTo: blue
+sdk: docker
+pinned: false
+short_description: Real-world bug triage environment for AI agents
+---
 # BugTriage OpenEnv
 
 A real-world bug triage environment for the OpenAI / PyTorch OpenEnv hackathon.
