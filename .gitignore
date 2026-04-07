@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.vscode/
+.claude/
+keys.txt
+.env
+.DS_Store
+.pytest_cache/

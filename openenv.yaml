@@ -1,0 +1,51 @@
+name: bug_triage_benchmark
+description: >
+  Real-world bug triage environment where an AI agent triages software bug reports
+  by classifying severity, assigning components and labels, detecting duplicates,
+  and writing triage summaries. Three difficulty levels: easy (frontend UI bug),
+  medium (auth duplicate detection), hard (production DB incident with summary).
+version: "1.0.0"
+
+tasks:
+  - task_id: bug_triage_easy
+    difficulty: easy
+    description: "Triage a single straightforward frontend bug report"
+    max_steps: 5
+  - task_id: bug_triage_medium
+    difficulty: medium
+    description: "Triage a backend auth bug with duplicate detection"
+    max_steps: 6
+  - task_id: bug_triage_hard
+    difficulty: hard
+    description: "Triage a production DB incident with summary writing"
+    max_steps: 8
+
+observation_space:
+  type: object
+  properties:
+    task_id: string
+    task_description: string
+    bug_report: string
+    step: integer
+    max_steps: integer
+    available_actions: array of string
+    assigned_severity: string | null
+    assigned_component: string | null
+    assigned_label: string | null
+    duplicate_of: string | null
+    summary: string | null
+    done: boolean
+    error: string | null
+
+action_space:
+  type: object
+  properties:
+    action_type:
+      enum: [classify_severity, assign_component, assign_label, mark_duplicate, write_summary, noop]
+    value: string
+
+reward_space:
+  type: float
+  range: [0.0, 1.0]
+
+entrypoint: app.py
