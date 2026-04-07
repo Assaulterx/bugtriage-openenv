@@ -45,7 +45,7 @@ def main():
         print("ERROR: openai package is not installed. Run: pip install openai", file=sys.stderr)
         sys.exit(1)
 
-    client = OpenAI(api_key=api_key, base_url=api_base)
+    client = OpenAI(api_key=api_key, base_url=api_base, timeout=120.0)
 
     env = BugTriageEnv()
     benchmark = "bug_triage_benchmark"
