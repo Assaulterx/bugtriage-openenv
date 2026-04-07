@@ -37,11 +37,12 @@ class StepRequest(BaseModel):
 
 
 @app.post("/reset")
-async def reset(req: ResetRequest):
+async def reset(req: Optional[ResetRequest] = None):
     env: BugTriageEnv = app.state.env
+    task_id = req.task_id if req else "bug_triage_easy"
     try:
-        obs = env.reset(req.task_id)
-        return {"observation": obs.model_dump(), "task_id": req.task_id}
+        obs = env.reset(task_id)
+        return {"observation": obs.model_dump(), "task_id": task_id}
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
