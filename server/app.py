@@ -1,30 +1,22 @@
-"""Thin server entry point for OpenEnv multi-mode deployment.
-
-Re-exports the FastAPI app from the project root so the [project.scripts]
-entry point resolves correctly without duplicating any environment logic.
-"""
+"""Thin server entry point for OpenEnv multi-mode deployment."""
 
 import os
-import sys
+from fastapi import FastAPI
+import uvicorn
 
-# Ensure the project root is on the path so envs/ and app can be imported
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+app = FastAPI()
 
-from server.app import app  # noqa: F401, E402
+
+@app.get("/")
+def root():
+    return {"status": "ok"}
 
 
 def main():
-    """CLI entry point for bugtriage-server."""
-    import uvicorn
-    from app import app as application
-
+    """CLI entry point."""
     port = int(os.environ.get("PORT", 7860))
-    uvicorn.run(application, host="0.0.0.0", port=port)
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 
 if __name__ == "__main__":
     main()
-
-
-# Expose `app` at module level so openenv validate can discover it
-__all__ = ["app", "main"]
