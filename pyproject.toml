@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.scripts]
-bugtriage-server = "server.app:main"
+server = "server.app:main"
 
 [tool.setuptools.packages.find]
 include = ["envs*", "server*"]
