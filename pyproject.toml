@@ -1,4 +1,4 @@
-tri[build-system]
+[build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
@@ -22,5 +22,3 @@ server = "server.app:main"
 
 [tool.setuptools.packages.find]
 include = ["envs*", "server*"]
-
-
