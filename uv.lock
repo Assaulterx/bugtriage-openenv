@@ -1,0 +1,9 @@
+version = 1
+requires-python = ">=3.10"
+
+[[package]]
+name = "bug_triage_benchmark"
+version = "1.0.0"
+source = { editable = "." }
+
+[package.dev-dependencies]
