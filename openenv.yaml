@@ -48,4 +48,4 @@ reward_space:
   type: float
   range: [0.0, 1.0]
 
-entrypoint: app.py
+entrypoint: server
