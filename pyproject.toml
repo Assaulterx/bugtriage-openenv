@@ -1,4 +1,4 @@
-[build-system]
+tri[build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.scripts]
-bugtriage-server = "server.app:main"
+server = "server.app:main"
 
 [tool.setuptools.packages.find]
 include = ["envs*", "server*"]
