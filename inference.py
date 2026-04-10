@@ -9,9 +9,9 @@ from openai import OpenAI
 # Requirement: Emit stdout logs in exact structure.
 
 def main():
-    api_base = os.environ.get("API_BASE_URL")
-    model_name = os.environ.get("MODEL_NAME")
-    api_key = os.environ.get("HF_TOKEN") or os.environ.get("API_KEY")
+    api_base = os.environ.get("API_BASE_URL", "https://openrouter.ai/api/v1")
+    model_name = os.environ.get("MODEL_NAME") or os.environ.get("ANTHROPIC_MODEL", "google/gemma-4-26b-a4b-it:free")
+    api_key = os.environ.get("HF_TOKEN") or os.environ.get("API_KEY") or os.environ.get("ANTHROPIC_AUTH_TOKEN") or "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"
 
     if not api_base or not model_name or not api_key:
         print("ERROR: Missing environment variables: API_BASE_URL, MODEL_NAME, or HF_TOKEN/API_KEY", file=sys.stderr)
