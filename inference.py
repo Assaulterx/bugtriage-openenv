@@ -10,8 +10,8 @@ from openai import OpenAI
 
 def main():
     api_base = os.environ.get("API_BASE_URL")
-    model_name = os.environ.get("MODEL_NAME")
-    api_key = os.environ.get("HF_TOKEN") or os.environ.get("API_KEY")
+    model_name = os.environ.get("ANTHROPIC_MODEL")
+    api_key = os.environ.get("ANTHROPIC_AUTH_TOKEN") or os.environ.get("API_KEY")
 
     if not api_base or not model_name or not api_key:
         print("ERROR: Missing environment variables: API_BASE_URL, MODEL_NAME, or HF_TOKEN/API_KEY", file=sys.stderr)
