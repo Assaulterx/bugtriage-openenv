@@ -20,7 +20,7 @@ Your Hugging Face Space must be fully built and in the Running state.
 Turn off any unnecessary Hugging Face Spaces.
 Stay within the 2 vCPU / 8 GB RAM limits.
 Your stdout must follow the exact [START] , [STEP] , [END] format.
-If there’s an exception, [END] must still be printed.
+If theres an exception, [END] must still be printed.
 Rewards must be formatted to 2 decimal places, and booleans must be lowercase.
 If it still fails, resubmit after confirming your Hugging Face Space is running. You can resubmit multiple times with no penalty.
 
@@ -72,7 +72,7 @@ If you want, I can help you check the exact pyproject.toml structure.
 
 
 Yes please 
-Sure — for this hackathon, the repo is expected to expose a server entry point in pyproject.toml.
+Sure  for this hackathon, the repo is expected to expose a server entry point in pyproject.toml.
 
 A minimal example looks like:
 
@@ -91,11 +91,11 @@ server must exist under [project.scripts]
 The value should point to a callable main
 If your inference.py is in the repo root, inference:main is the usual pattern
 Keep inference.py in the root directory
-Don’t forget the required environment variables:
+Dont forget the required environment variables:
 API_BASE_URL with a default
 MODEL_NAME with a default
 HF_TOKEN required
-If your file currently doesn’t have a main() function, you should add one.
+If your file currently doesnt have a main() function, you should add one.
 
 If you want, I can give you a full minimal inference.py + pyproject.toml pair that matches the required format.
 
@@ -103,7 +103,7 @@ If you want, I can give you a full minimal inference.py + pyproject.toml pair th
 
 
 Please 
-Here’s a minimal working setup.
+Heres a minimal working setup.
 
 inference.py in the project root:
 
@@ -154,7 +154,7 @@ server exists under [project.scripts]
 inference:main points to a real main() function
 API_BASE_URL and MODEL_NAME have defaults
 HF_TOKEN is required and validated
-If you want, I can also help you adapt this into the exact repo structure you’re using.
+If you want, I can also help you adapt this into the exact repo structure youre using.
 
 33 minutes ago
 
@@ -167,7 +167,7 @@ Please paste:
 Your current folder structure
 Your current pyproject.toml
 Your current inference.py
-Then I’ll rewrite them into the exact format expected for submission.
+Then Ill rewrite them into the exact format expected for submission.
 
 33 minutes ago
 
@@ -229,7 +229,7 @@ Also confirm that:
 server/app.py exists
 it defines a main() function
 the repo root contains the needed entry files
-If you want, paste your server/app.py next and I’ll check whether the main() entry point is correct.
+If you want, paste your server/app.py next and Ill check whether the main() entry point is correct.
 
 32 minutes ago
 
@@ -274,7 +274,7 @@ The checker wants a script named exactly:
 
 [project.scripts]
 server = "server.app:main"
-So I’d change it to:
+So Id change it to:
 
 [build-system]
 requires = ["setuptools>=61.0"]
@@ -316,7 +316,7 @@ If you want, paste your repo tree like:
 root files
 server/
 envs/
-and I’ll tell you the exact import line you should use.
+and Ill tell you the exact import line you should use.
 
 31 minutes ago
 
@@ -399,7 +399,7 @@ Haan, pyproject.toml ka ye part largely sahi lag raha hai:
 
 [project.scripts]
 server = "server.app:main"
-Lekin 3 cheezein जरूर check karo:
+Lekin 3 cheezein  check karo:
 
 server/app.py file exist karti ho
 server/__init__.py file exist karti ho
@@ -417,7 +417,7 @@ One more important point:
 Hackathon validation ke liye inference.py bhi project root me hona chahiye.
 So: pyproject.toml sahi direction me hai, but overall repo structure aur imports bhi correct hone chahiye.
 
-Agar chaho, main tumhe exact “minimum working structure” bata deta hoon.
+Agar chaho, main tumhe exact minimum working structure bata deta hoon.
 
 24 minutes ago
 
@@ -495,7 +495,7 @@ ka complete correct minimal set bana deta hoon.
 
 
 Ha bana de
-Bilkul — ye ek clean minimal setup hai.
+Bilkul  ye ek clean minimal setup hai.
 
 1) pyproject.toml
 [build-system]
@@ -573,13 +573,13 @@ if __name__ == "__main__":
     main()
 5) Folder structure
 project-root/
-├── inference.py
-├── pyproject.toml
-├── server/
-│   ├── __init__.py
-│   └── app.py
-└── envs/
-    └── ...
+ inference.py
+ pyproject.toml
+ server/
+    __init__.py
+    app.py
+ envs/
+     ...
 Important checks
 inference.py root me ho
 server script name exactly ho
@@ -602,8 +602,8 @@ Goal hai ki package import clean ho aur main() sahi file me ho
 Simple rule
 Agar aapke paas:
 
-server/app.py hai → usme app aur main() hona chahiye
-root inference.py hai → wo alag hona chahiye
+server/app.py hai  usme app aur main() hona chahiye
+root inference.py hai  wo alag hona chahiye
 Kya change karna hota hai?
 Aksar sirf ye parts:
 
@@ -624,7 +624,7 @@ def main():
     port = int(os.environ.get("PORT", 7860))
     uvicorn.run(app, host="0.0.0.0", port=port)
 Bottom line
-Erase nahi karna hai — correct jagah pe correct entry point banana hai.
+Erase nahi karna hai  correct jagah pe correct entry point banana hai.
 
 Agar chaho, main tumhara current app.py dekhkar bata deta hoon:
 
@@ -637,13 +637,13 @@ kya replace karna hai
 Ye mera app.py hai tu khud pura change krke muze de update version so I can copy 
 I can do that, but I need the actual contents of your app.py to rewrite it safely.
 
-Please paste your full app.py, and I’ll return:
+Please paste your full app.py, and Ill return:
 
 a cleaned, updated version you can copy-paste
 any required import fixes
 the correct main() entry point
 any changes needed to match server.app:main
-If you want, paste it now and I’ll rewrite it directly.
+If you want, paste it now and Ill rewrite it directly.
 
 16 minutes ago
 
@@ -678,7 +678,7 @@ if __name__ == "__main__":
 
 # Expose `app` at module level so openenv validate can discover it
 __all__ = ["app", "main"]
-Haan — is file ko simple aur correct bana dete hain. Aap isse copy-paste kar sakte ho:
+Haan  is file ko simple aur correct bana dete hain. Aap isse copy-paste kar sakte ho:
 
 """Thin server entry point for OpenEnv multi-mode deployment."""
 
@@ -721,7 +721,7 @@ Agar chaho, main ab aapke full repo structure ke hisaab se exact final version b
 
 
 Thik hai ab wo file copy paste kr de ab kya karu
-Haan — ab next step simple hai. Aap ye file server/app.py me paste karo:
+Haan  ab next step simple hai. Aap ye file server/app.py me paste karo:
 
 """Thin server entry point for OpenEnv multi-mode deployment."""
 
@@ -750,12 +750,12 @@ Ab kya karna hai
 Repo me ye hona chahiye:
 
 project-root/
-├── inference.py
-├── pyproject.toml
-├── server/
-│   ├── __init__.py
-│   └── app.py
-└── envs/
+ inference.py
+ pyproject.toml
+ server/
+    __init__.py
+    app.py
+ envs/
 2) server/__init__.py bana do
 Agar missing hai to empty file bana do:
 
@@ -775,7 +775,7 @@ Root me hona chahiye.
 
 Important
 Aapka current app.py sirf basic server start kar raha hai.
-Agar aapke hackathon environment ke liye aur logic chahiye, to wo envs/ ya alag modules me add karo — server/app.py ko simple rehne do.
+Agar aapke hackathon environment ke liye aur logic chahiye, to wo envs/ ya alag modules me add karo  server/app.py ko simple rehne do.
 
 Agar chaho, main ab tumhare liye:
 
@@ -834,8 +834,8 @@ Saath me ye bhi check karo
 Repo me ye files honi chahiye:
 
 server/
-├── __init__.py
-└── app.py
+ __init__.py
+ app.py
 Aur server/app.py me main() function hona chahiye.
 
 Correct minimal example
@@ -873,7 +873,7 @@ Agar chaho, main tumhara current pyproject.toml dekh kar exact corrected version
 
 
 Naya file bana ke de project.toml aur use mai bs copy kr sku 
-Bilkul — ye ready-to-copy pyproject.toml hai:
+Bilkul  ye ready-to-copy pyproject.toml hai:
 
 [build-system]
 requires = ["setuptools>=61.0"]
@@ -986,7 +986,7 @@ Agar chaho, main ab server/app.py ka final copy-paste version bhi ekdum clean fo
 
 
 Ha de
-Bilkul — ye final server/app.py copy-paste karo:
+Bilkul  ye final server/app.py copy-paste karo:
 
 """Thin server entry point for OpenEnv multi-mode deployment."""
 
@@ -1027,7 +1027,7 @@ Agar chaho, main next message me root inference.py bhi final copy-paste format m
 
 
 Bana
-Bilkul — ye final root inference.py copy-paste karo:
+Bilkul  ye final root inference.py copy-paste karo:
 
 import os
 from openai import OpenAI
