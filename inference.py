@@ -9,7 +9,7 @@ Hi! How can I help with the Meta PyTorch OpenEnv Hackathon?
 38 minutes ago
 
 
-I have fixed all issues still it's not passing
+# I have fixed all issues still it's not passing
 Please check these common failure points:
 
 inference.py must be in the project root, not a subfolder.
