@@ -18,7 +18,7 @@ def grade_easy(state: Dict[str, Any], ground_truth: Dict[str, Any]) -> float:
     if str(state.get("assigned_label", "")).lower() == ground_truth["label"]:
         score += weights["label"]
 
-    return round(min(score, 1.0), 4)
+    return round(0.01 + 0.98 * min(score, 1.0), 4)
 
 
 def grade_medium(state: Dict[str, Any], ground_truth: Dict[str, Any]) -> float:
@@ -40,7 +40,7 @@ def grade_medium(state: Dict[str, Any], ground_truth: Dict[str, Any]) -> float:
     elif expected_dup is None and assigned_dup in ("", "none", "null"):
         score += weights["duplicate_of"]
 
-    return round(min(score, 1.0), 4)
+    return round(0.01 + 0.98 * min(score, 1.0), 4)
 
 
 def grade_hard(state: Dict[str, Any], ground_truth: Dict[str, Any]) -> float:
@@ -80,7 +80,7 @@ def grade_hard(state: Dict[str, Any], ground_truth: Dict[str, Any]) -> float:
         if required_terms:
             score += weights["summary"] * 0.5 * (terms_found / len(required_terms))
 
-    return round(min(score, 1.0), 4)
+    return round(0.01 + 0.98 * min(score, 1.0), 4)
 
 
 GRADERS = {
